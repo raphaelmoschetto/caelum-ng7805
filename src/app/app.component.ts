@@ -17,12 +17,6 @@ import { Component } from '@angular/core';
     letter-spacing:10px; 
     color:white; 
   }
-
-  section img
-  {
-    border:4px solid red;
-  }
-  
     `]
 
 })
