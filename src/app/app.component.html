@@ -1,8 +1,9 @@
 <header>
-    <h1 class='card-panel red darken-2'>Hello Life!</h1>
+    <h1 class='card-panel red darken-2'>Hello Animals!</h1>
 </header>
 <main class='container center-align'>
     <section>
-        <photo></photo>
+        <!--ECMASCRIPT 6-->
+        <photo *ngFor="let photo of photoList" url="{{photo.url}}" titulo="{{photo.titulo}}"></photo>
     </section>
 </main>

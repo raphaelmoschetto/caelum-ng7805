@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
 
@@ -22,5 +23,16 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent{
+
+    photoList
+
+    constructor(conexaoApi: HttpClient){ // Injeção de dependência
+      conexaoApi.get('http://localhost:3000/v1/fotos')
+        .subscribe(
+          photoApi => this.photoList = photoApi //Arrow Function - Resgata váriaveis da classe 
+          ,
+          erro => console.log(erro)
+        )
+    }
 
 }
