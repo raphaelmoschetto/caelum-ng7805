@@ -17,19 +17,17 @@ export class CadastroComponent implements OnInit {
 
   send(){
 
-    let cabecalho = new HttpHeaders()
-
-    cabecalho.append('Content-Type','application/json')
-
     this.conexaoApi.post(
       'http://localhost:3000/v1/fotos/',
       this.photo,
       {
-        headers: cabecalho
+        headers: new HttpHeaders({'Content-Type':'application/json'})
       }
     )
     .subscribe(
-      resposta => { console.log (resposta) },
+      (resposta) => { 
+        this.photo = new PhotoComponent()
+       },
       erro => console.log(erro)
     )
 

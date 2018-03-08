@@ -34,9 +34,9 @@
 
             <h3>Preview</h3>
 
-            <div><strong>Título</strong><br/>{{photo.titulo}}</div>
-            <div><strong>Url</strong><br/>{{photo.url}}</div>
-            <div><strong>Descrição</strong><br/>{{photo.descricao}}</div>
+            <card [titulo]="photo.titulo">
+                <photo url="{{photo.url}}" titulo="{{photo.titulo}}"></photo>
+            </card>
 
         </aside>
 
