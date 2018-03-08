@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { PhotoModule } from "./photo/photo.module";
@@ -19,6 +20,7 @@ import { roteamento } from "./app.routes";
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     PhotoModule,
     CardModule,
     roteamento

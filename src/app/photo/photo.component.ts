@@ -4,7 +4,7 @@ import { Component, Input } from "@angular/core";
 
     selector: 'photo',
     template: `<img src="{{url}}" alt="{{titulo}}" class="circle responsive-img" />`,
-    styles: [`img { border:2px solid red; height:150px; }`]
+    styles: [`img { border:2px solid red; height:110px; }`]
 
 })
 

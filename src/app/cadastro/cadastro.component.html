@@ -5,24 +5,22 @@
 
     <div class="row">
 
-        <div>{{photo.titulo}}</div>
-        <div>{{photo.url}}</div>
-        <div>{{photo.descricao}}</div>
+        
 
-        <form class="col s7" (submit)="send($event)">
+        <form class="col s7" (ngSubmit)="send()">
 
             <div class="input-field col s12">
-                <input (input)="photo.titulo = $event.target.value" id="titulo" type="text" class="validate">
+                <input [(ngModel)]="photo.titulo" id="titulo" name="titulo" type="text" class="validate">
                 <label class="active" for="titulo">Título</label>
             </div>
 
             <div class="input-field col s12">
-                <input (input)="photo.url = $event.target.value" id="url" type="text" class="validate">
+                <input [(ngModel)]="photo.url" id="url" name="url" type="text" class="validate">
                 <label class="active" for="url">Url</label>
             </div>
 
             <div class="input-field col s12">
-                <textarea (input)="photo.descricao = $event.target.value" id="descricao" cols="30" rows="10" class="materialize-textarea"></textarea>
+                <textarea [(ngModel)]="photo.descricao" id="descricao" name="descricao" cols="30" rows="10" class="materialize-textarea"></textarea>
                 <label class="active" for="descricao">Descrição</label>
             </div>
 
@@ -35,6 +33,10 @@
         <aside class="col s5">
 
             <h3>Preview</h3>
+
+            <div><strong>Título</strong><br/>{{photo.titulo}}</div>
+            <div><strong>Url</strong><br/>{{photo.url}}</div>
+            <div><strong>Descrição</strong><br/>{{photo.descricao}}</div>
 
         </aside>
 
