@@ -1,0 +1,14 @@
+<header>
+    <h1 class='card-panel red darken-2'>Hello Animal!</h1>
+</header>
+<main class='container center-align'>
+
+    <div class="row">
+
+        <card class="col s2" *ngFor="let photo of photoList" titulo="{{photo.titulo}}">
+            <!--ECMASCRIPT 6-->
+            <photo url="{{photo.url}}" titulo="{{photo.titulo}}"></photo>
+        </card>
+
+    </div>
+</main>
