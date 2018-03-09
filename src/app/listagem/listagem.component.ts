@@ -15,6 +15,7 @@ import { FotoService } from "../servicos/foto.service";
 export class ListagemComponent implements OnInit {
 
   photoList: PhotoComponent[]
+  mensagem;
 
     constructor(private servico: FotoService){ // Injeção de dependência
 
@@ -42,6 +43,11 @@ export class ListagemComponent implements OnInit {
                 }
               }
             ) */
+
+
+            this.mensagem = `Foto ${foto.titulo} apagada com sucesso!`;
+
+            setTimeout( () => { this.mensagem = ''; }, 3000);
 
             this.photoList = this.photoList.filter(fotoDaLista => fotoDaLista != foto)
         }
