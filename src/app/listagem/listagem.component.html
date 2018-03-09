@@ -24,8 +24,10 @@
     <div class="row">
 
         <card class="col s2" *ngFor="let photo of photoList" titulo="{{photo.titulo}}">
-            <!--ECMASCRIPT 6-->
-            <photo url="{{photo.url}}" titulo="{{photo.titulo}}"></photo>
+            <a [routerLink]="['/cadastro', photo._id]">
+                <!--ECMASCRIPT 6-->
+                <photo url="{{photo.url}}" titulo="{{photo.titulo}}"></photo>
+            </a>
             
             <div class="card-content">
                 <button (click)="deletar(photo)" class="btn-floating waves-effect waves-light red">

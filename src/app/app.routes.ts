@@ -5,6 +5,7 @@ import { CadastroComponent } from "./cadastro/cadastro.component";
 const rotasApp:Routes = [
     { path: '', component: ListagemComponent },
     { path: 'cadastro', component: CadastroComponent },
+    { path: 'cadastro/:photoId', component: CadastroComponent },
     { path: '**', redirectTo: '' }
 ] 
 
