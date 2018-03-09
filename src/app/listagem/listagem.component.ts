@@ -35,13 +35,15 @@ export class ListagemComponent implements OnInit {
     this.servico.deletar(foto)
       .subscribe(
         resposta => { 
-           this.photoList = this.photoList.filter(
+           /* this.photoList = this.photoList.filter(
               function(fotoDaLista){
                 if(fotoDaLista != foto){
                   return fotoDaLista
                 }
               }
-            )
+            ) */
+
+            this.photoList = this.photoList.filter(fotoDaLista => fotoDaLista != foto)
         }
       )
         
