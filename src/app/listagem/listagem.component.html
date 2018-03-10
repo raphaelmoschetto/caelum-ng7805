@@ -24,7 +24,7 @@
 
     <div class="row">
 
-        <card class="col s2" *ngFor="let photo of photoList" titulo="{{photo.titulo}}">
+        <card class="col s2" *ngFor="let photo of photoList | filtroPorTitulo" titulo="{{photo.titulo}}">
             <a [routerLink]="['/cadastro', photo._id]">
                 <!--ECMASCRIPT 6-->
                 <photo url="{{photo.url}}" titulo="{{photo.titulo}}"></photo>
