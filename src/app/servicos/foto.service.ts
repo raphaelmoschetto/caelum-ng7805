@@ -24,7 +24,12 @@ const headers = {
         return this.conexaoApi.delete(url+foto._id)
     }
 
-    atualizar(){}
+    consultar(idFoto): Observable<PhotoComponent>{
+        return this.conexaoApi.get<PhotoComponent>(url+idFoto)
+    }
 
-    consultar(){}
+    atualizar(foto: PhotoComponent): Observable<Object>{
+        return this.conexaoApi.put(url+foto._id,foto,headers)
+    }
+
 }
