@@ -14,7 +14,7 @@ import { FotoService } from "../servicos/foto.service";
 })
 export class ListagemComponent implements OnInit {
 
-  photoList: PhotoComponent[]
+  photoList: PhotoComponent[] = []
   mensagem;
 
     constructor(private servico: FotoService){ // Injeção de dependência
