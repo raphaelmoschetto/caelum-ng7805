@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PhotoComponent } from '../photo/photo.component';
 import { FotoService } from "../servicos/foto.service";
 import { ActivatedRoute, Router } from "@angular/router";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-cadastro',
@@ -11,11 +12,18 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class CadastroComponent implements OnInit {
 
   photo = new PhotoComponent()
+  formCadastro: FormGroup
 
   constructor(private servico: FotoService, 
               private rota: ActivatedRoute,
-              private roteador: Router
+              private roteador: Router,
+              private formBuilder: FormBuilder
              ){
+                this.formCadastro = this.formBuilder.group({
+                    titulo:['', Validators.required],
+                    url:['', Validators.required],
+                    descricao:['', Validators.required]
+                })
   }
 
   ngOnInit() {

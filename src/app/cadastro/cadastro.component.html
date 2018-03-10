@@ -4,26 +4,25 @@
 <main class='container center-align'>
 
     <div class="row">
-        <form class="col s7" (ngSubmit)="send()">
+        <form class="col s7" [formGroup]="formCadastro" (ngSubmit)="send()">
 
             <div class="input-field col s12">
-                <input [(ngModel)]="photo.titulo" id="titulo" name="titulo" type="text" class="validate">
+                <input formControlName="titulo" [(ngModel)]="photo.titulo" id="titulo" name="titulo" type="text" class="validate">
                 <label class="active" for="titulo">Título</label>
             </div>
 
             <div class="input-field col s12">
-                <input [(ngModel)]="photo.url" id="url" name="url" type="text" class="validate">
+                <input formControlName="url" [(ngModel)]="photo.url" id="url" name="url" type="text" class="validate">
                 <label class="active" for="url">Url</label>
             </div>
 
             <div class="input-field col s12">
-                <textarea [(ngModel)]="photo.descricao" id="descricao" name="descricao" cols="30" rows="10" class="materialize-textarea"></textarea>
+                <textarea formControlName="descricao" [(ngModel)]="photo.descricao" id="descricao" name="descricao" cols="30" rows="10" class="materialize-textarea"></textarea>
                 <label class="active" for="descricao">Descrição</label>
             </div>
 
-
             <a class="btn grey lighten-1" routerLink="">Voltar</a>
-            <button class="btn">Salvar</button>
+            <button class="btn" [disabled]=formCadastro.invalid>Salvar</button>
 
         </form>
 
