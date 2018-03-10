@@ -15,7 +15,7 @@ export class CadastroComponent implements OnInit {
   constructor(private servico: FotoService, 
               private rota: ActivatedRoute,
               private roteador: Router
-            ) {
+             ){
   }
 
   ngOnInit() {
@@ -40,6 +40,7 @@ export class CadastroComponent implements OnInit {
       this.servico.atualizar(this.photo)
                   .subscribe(
                       () => {
+                          alert('Foto editada com sucesso.')
                           this.roteador.navigate([''])
                       }
                   )
@@ -49,6 +50,8 @@ export class CadastroComponent implements OnInit {
         .subscribe(
           (resposta) => { 
             this.photo = new PhotoComponent()
+            alert('Foto cadastrada com sucesso.')
+            this.roteador.navigate([''])
           },
           erro => console.log(erro)
         )
